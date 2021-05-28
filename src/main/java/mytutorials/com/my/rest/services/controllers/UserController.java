@@ -3,7 +3,10 @@ package mytutorials.com.my.rest.services.controllers;
 import java.util.List;
 
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -29,7 +32,7 @@ public class UserController {
 	
 	@GET
 	public Response getAllUsers(){
-		List<Users> userList = us.getInitialUsers() ;
+		List<Users> userList = us.getAllUsers() ;
 		
 		return Response.status(Status.OK)
 						.entity(userList)
@@ -40,8 +43,8 @@ public class UserController {
 	
 	@Path("/{userid}")
 	@GET
-	public Response getUserById(@PathParam ("userid") long id){
-		Users user = null;
+	public Response getUserById(@PathParam ("userid") String id){
+		Users user = us.getUserById(id);
 		
 		return Response.status(Status.OK)
 				.entity(user)
@@ -49,7 +52,32 @@ public class UserController {
 	}
 	
 	
+	@POST
+	public Response createUser(Users usr){
+		Users user = us.createUser(usr);
+		return Response.status(Status.CREATED)
+				.entity(user)
+				.build();
+	}
 	
+	@PUT 
+	@Path("/{shortID}")
+	public Response updateUser(Users usr, @PathParam ("shortID") String shortid){
+		
+		Users user = us.udpateUser(shortid, usr);
+		
+		return Response.status(Status.OK)
+				.entity(user)
+				.build();
+	}
+	
+	@Path("/{shortID}")
+	@DELETE
+	public Response deleteUsers(@PathParam ("shortID") String shortid){
+		us.deleteUser(shortid);
+		return Response.status(Status.NO_CONTENT)
+						.build();
+	}
 	
 /*	@Path("/{userid}/usertickets")
 	@GET
