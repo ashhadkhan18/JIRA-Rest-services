@@ -1,0 +1,341 @@
+{
+	"info": {
+		"_postman_id": "b69c469a-d335-4c85-8468-b3ac5b3e5de4",
+		"name": "My JIRA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get ALL Users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/my.rest.services/webapi/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"my.rest.services",
+						"webapi",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create User Jofra Archer",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/my.rest.services/webapi/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"my.rest.services",
+						"webapi",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get ALL Tickets",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/my.rest.services/webapi/tickets",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"my.rest.services",
+						"webapi",
+						"tickets"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create a ticket with userid aflintof",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"assignedBy\": \"\",\r\n        \"assignedTo\": \"\",\r\n        \"comments\": [],\r\n        \"createdBy\": \"aflintof\",\r\n        \"description\": \"New test ticket\",\r\n        \"ticketPriority\": \"Blocker\",\r\n        \"ticketStatus\": \"Open\"\r\n    }"
+				},
+				"url": {
+					"raw": "http://localhost:8080/my.rest.services/webapi/tickets",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"my.rest.services",
+						"webapi",
+						"tickets"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get ALL Tickets Copy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/my.rest.services/webapi/tickets",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"my.rest.services",
+						"webapi",
+						"tickets"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Created Tickets By flintoff",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/my.rest.services/webapi/tickets/aflintof/created",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"my.rest.services",
+						"webapi",
+						"tickets",
+						"aflintof",
+						"created"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get  Tickets assigned to stuart broad",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/my.rest.services/webapi/tickets/sbroad/assigned",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"my.rest.services",
+						"webapi",
+						"tickets",
+						"sbroad",
+						"assigned"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Assign  ticket to stuart broad",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"assignedBy\": \"\",\r\n        \"assignedTo\": \"sbroad\",\r\n        \"comments\": [],\r\n        \"createDate\": \"2021-05-27T05:05:43.442Z[UTC]\",\r\n        \"createdBy\": \"aflintof\",\r\n        \"description\": \"First test ticket\",\r\n        \"ticketPriority\": \"Major\",\r\n        \"ticketStatus\": \"Open\"\r\n    }"
+				},
+				"url": {
+					"raw": "http://localhost:8080/my.rest.services/webapi/tickets/100",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"my.rest.services",
+						"webapi",
+						"tickets",
+						"100"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Assign another ticket to stuart broad Copy",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"assignedBy\": \"vkohli\",\r\n        \"assignedTo\": \"sbroad\",\r\n        \"comments\": [],\r\n        \"createDate\": \"2021-05-27T04:42:12.46Z[UTC]\",\r\n        \"createdBy\": \"vkohli\",\r\n        \"description\": \"second test ticket\",\r\n        \"ticketPriority\": \"Blocker\",\r\n        \"ticketStatus\": \"Open\"\r\n    }"
+				},
+				"url": {
+					"raw": "http://localhost:8080/my.rest.services/webapi/tickets/101",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"my.rest.services",
+						"webapi",
+						"tickets",
+						"101"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get  Tickets assigned to stuart broad",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/my.rest.services/webapi/tickets/sbroad/assigned",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"my.rest.services",
+						"webapi",
+						"tickets",
+						"sbroad",
+						"assigned"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "move ticket status from open to Resolved",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"assignedBy\": \"vkohli\",\r\n        \"assignedTo\": \"sbroad\",\r\n        \"comments\": [],\r\n        \"createDate\": \"2021-05-27T04:42:12.46Z[UTC]\",\r\n        \"createdBy\": \"vkohli\",\r\n        \"description\": \"second test ticket\",\r\n        \"ticketPriority\": \"Blocker\",\r\n        \"ticketStatus\": \"Resolved\"\r\n    }"
+				},
+				"url": {
+					"raw": "http://localhost:8080/my.rest.services/webapi/tickets/101",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"my.rest.services",
+						"webapi",
+						"tickets",
+						"101"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Resolved ticket",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/my.rest.services/webapi/tickets/101",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"my.rest.services",
+						"webapi",
+						"tickets",
+						"101"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get ALL Tickets",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/my.rest.services/webapi/tickets",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"my.rest.services",
+						"webapi",
+						"tickets"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		}
+	]
+}
