@@ -13,6 +13,15 @@ public class Comments {
 	String commentor;
 	String commentDesc;
 	Date createdDate;
+	long ticketid;
+	
+	
+	public long getTicketid() {
+		return ticketid;
+	}
+	public void setTicketid(long ticketid) {
+		this.ticketid = ticketid;
+	}
 	public long getId() {
 		return id;
 	}
@@ -37,12 +46,13 @@ public class Comments {
 	public void setCreatedDate(Date createdDate) {
 		this.createdDate = createdDate;
 	}
-	public Comments(long id, String commentor, String commentDesc, Date createdDate) {
+	public Comments(long id, String commentor, String commentDesc, Date createdDate, long ticketid) {
 		super();
 		this.id = id;
 		this.commentor = commentor;
 		this.commentDesc = commentDesc;
 		this.createdDate = createdDate;
+		this.ticketid = ticketid;
 	}
 	
 	public Comments() {

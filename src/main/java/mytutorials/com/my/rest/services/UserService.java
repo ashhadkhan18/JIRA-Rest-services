@@ -37,9 +37,13 @@ public class UserService {
 	public Users createUser(Users usr){
 		StringBuilder sb = new StringBuilder();
 		sb.append(usr.getFirstName().charAt(0));
-		if(usr.getLastName().length()>4)
-		sb.append(usr.getLastName().substring(0, 6));
-		usr.setShortId(sb.toString());
+		
+		if(usr.getLastName().length()>7)
+			{sb.append(usr.getLastName().substring(0, 7));}
+		else
+			{sb.append(usr.getLastName());}
+		
+		usr.setShortId(sb.toString().toLowerCase());
 		userlist.add(usr);
 		return usr;
 	}

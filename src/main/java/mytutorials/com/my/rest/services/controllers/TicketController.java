@@ -36,6 +36,16 @@ public class TicketController {
 						.build();
 	}
 	
+	@GET
+	@Path("/{ticketid}")
+	public Response getTicketById(@PathParam("ticketid") long id){
+		Tickets ticket = ts.getticketbyID(id) ;
+		
+		return Response.status(Status.OK)
+						.entity(ticket)
+						.build();
+	}
+	
 	
 	@Path("{userid}/created")
 	@GET
@@ -81,5 +91,10 @@ public class TicketController {
 		return Response.status(Status.OK)
 						.entity(updatedTicket)
 						.build();
+	}
+	
+	@Path("/{ticketid}/comments")
+	public CommentController getCommentByTicketId(){
+		return new CommentController();
 	}
 }

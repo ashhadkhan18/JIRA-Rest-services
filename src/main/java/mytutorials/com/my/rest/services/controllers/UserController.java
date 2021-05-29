@@ -79,9 +79,5 @@ public class UserController {
 						.build();
 	}
 	
-/*	@Path("/{userid}/usertickets")
-	@GET
-	public TicketController getticketsrelatedtoUser(){
-		return new TicketController();
-	}*/
+
 }

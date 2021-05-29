@@ -29,6 +29,143 @@
 		{
 			"name": "Create User Jofra Archer",
 			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"assignedTickets\": [],\r\n        \"createdDate\": \"2021-05-29T04:00:24.531Z[UTC]\",\r\n        \"createdTickets\": [],\r\n        \"email\": \"jarche@testmail.com\",\r\n        \"firstName\": \"Jofra\",\r\n        \"lastName\": \"Archer\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/my.rest.services/webapi/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"my.rest.services",
+						"webapi",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get ALL Users Copy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/my.rest.services/webapi/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"my.rest.services",
+						"webapi",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update User Jofra Archer to Jeff Archer",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"assignedTickets\": [],\r\n    \"createdDate\": \"2021-05-29T04:00:24.531Z[UTC]\",\r\n    \"createdTickets\": [],\r\n    \"email\": \"jarche@testmail.com\",\r\n    \"firstName\": \"Jeff\",\r\n    \"lastName\": \"Archer\",\r\n    \"shortId\": \"jarcher\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/my.rest.services/webapi/users/jarcher",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"my.rest.services",
+						"webapi",
+						"users",
+						"jarcher"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get ALL Users Copy 2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/my.rest.services/webapi/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"my.rest.services",
+						"webapi",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete user jeff archer",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/my.rest.services/webapi/users/jarcher",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"my.rest.services",
+						"webapi",
+						"users",
+						"jarcher"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get ALL Users Copy 3",
+			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
@@ -115,6 +252,28 @@
 						"my.rest.services",
 						"webapi",
 						"tickets"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Ticket using ticket id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/my.rest.services/webapi/tickets/100",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"my.rest.services",
+						"webapi",
+						"tickets",
+						"100"
 					]
 				}
 			},
@@ -329,11 +488,220 @@
 			"response": []
 		},
 		{
-			"name": "New Request",
+			"name": "Get Comments for a ticket",
 			"request": {
 				"method": "GET",
 				"header": [],
-				"url": null
+				"url": {
+					"raw": "http://localhost:8080/my.rest.services/webapi/tickets/100/comments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"my.rest.services",
+						"webapi",
+						"tickets",
+						"100",
+						"comments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add a comment on a ticket",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n    {\r\n        \"commentDesc\": \"my test comment 3\",\r\n        \"commentor\": \"aflintof\",\r\n        \"createdDate\": \"2021-05-29T06:31:26.417Z[UTC]\",\r\n        \"ticketid\": 100\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/my.rest.services/webapi/tickets/100/comments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"my.rest.services",
+						"webapi",
+						"tickets",
+						"100",
+						"comments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Comments for a ticket Copy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/my.rest.services/webapi/tickets/100/comments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"my.rest.services",
+						"webapi",
+						"tickets",
+						"100",
+						"comments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Comments by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/my.rest.services/webapi/tickets/100/comments/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"my.rest.services",
+						"webapi",
+						"tickets",
+						"100",
+						"comments",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modify Comment",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"commentDesc\": \"my test modified comment 2\",\r\n    \"commentor\": \"aflintof\",\r\n    \"createdDate\": \"2021-05-29T06:31:26.418Z[UTC]\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/my.rest.services/webapi/tickets/100/comments/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"my.rest.services",
+						"webapi",
+						"tickets",
+						"100",
+						"comments",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get modified Comment",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/my.rest.services/webapi/tickets/100/comments/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"my.rest.services",
+						"webapi",
+						"tickets",
+						"100",
+						"comments",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete modified Comment",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/my.rest.services/webapi/tickets/100/comments/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"my.rest.services",
+						"webapi",
+						"tickets",
+						"100",
+						"comments",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Comments for a ticket Copy 2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/my.rest.services/webapi/tickets/100/comments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"my.rest.services",
+						"webapi",
+						"tickets",
+						"100",
+						"comments"
+					]
+				}
 			},
 			"response": []
 		}

@@ -10,6 +10,7 @@ import mytutorials.com.my.rest.services.models.Tickets;
 public class TicketService {
 
 	private static List<Tickets> ticketList = new ArrayList<>();
+	private CommentService cs= new CommentService();
 	static{
 		ticketList.add(new Tickets(100l,"First test ticket",new Date(),"","","aflintof",new ArrayList<Comments>(),Tickets.Status.Open,Tickets.Priority.Major));
 		ticketList.add(new Tickets(101l,"second test ticket",new Date(),"","","sbroad",new ArrayList<Comments>(),Tickets.Status.Open,Tickets.Priority.Blocker));
@@ -34,6 +35,7 @@ public class TicketService {
 		for(Tickets tckts: ticketList){
 			if(tckts.getId()==id){
 				result = tckts;
+				result.setComments(cs.getallCommentsbyticketid(result.getId()));
 			}
 		}
 		
@@ -47,7 +49,9 @@ public class TicketService {
 		List<Tickets> resultlist = new ArrayList<>();
 		for(Tickets tckts: ticketList){
 			if(tckts.getCreatedBy().equalsIgnoreCase(createdById)){
+				tckts.setComments(cs.getallCommentsbyticketid(tckts.getId()));
 				resultlist.add(tckts);
+				
 			}
 		}
 		
@@ -58,6 +62,7 @@ public class TicketService {
 		List<Tickets> resultlist = new ArrayList<>();
 		for(Tickets tckts: ticketList){
 			if(tckts.getAssignedTo().equalsIgnoreCase(assingedToId)){
+				tckts.setComments(cs.getallCommentsbyticketid(tckts.getId()));
 				resultlist.add(tckts);
 			}
 		}
